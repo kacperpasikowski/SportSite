@@ -87,19 +87,39 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Automatyczne przełączanie slajdów co 5 sekund
-  let slideInterval = setInterval(() => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  }, 5000);
+  // let slideInterval = setInterval(() => {
+  //   currentSlide = (currentSlide + 1) % slides.length;
+  //   showSlide(currentSlide);
+  // }, 5000);
 
-  function resetInterval() {
-    clearInterval(slideInterval);
-    slideInterval = setInterval(() => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }, 5000);
-  }
+  // function resetInterval() {
+  //   clearInterval(slideInterval);
+  //   slideInterval = setInterval(() => {
+  //     currentSlide = (currentSlide + 1) % slides.length;
+  //     showSlide(currentSlide);
+  //   }, 5000);
+  // }
 
   // Inicjalizacja pierwszego slajdu
   showSlide(currentSlide);
+
+
+
+
+  // OFERTA CARDS 
+
+  document.querySelectorAll('.learn-more').forEach(function(button) {
+    button.addEventListener('click', function() {
+      const card = this.closest('.card');
+      card.classList.toggle('show-overlay');
+    });
+  });
+
+  document.querySelectorAll('.close-overlay').forEach(function(button) {
+    button.addEventListener('click', function(event) {
+      event.stopPropagation();
+      const card = this.closest('.card');
+      card.classList.remove('show-overlay');
+    });
+  });
 });
