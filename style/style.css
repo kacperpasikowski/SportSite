@@ -12,6 +12,7 @@
   --dark-yellow: #fffb00;
   --light-yellow: #fdf8b4;
   --dark-blue: #2e1a47;
+  --dark-blue-rgb: 46, 26, 71; /* Dodane */
   --my-gray: #f0f0f0;
 }
 
@@ -20,6 +21,9 @@ body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
   scroll-behavior: smooth;
+  height: 100%;
+  margin: 0;
+
 }
 
 a {
@@ -39,6 +43,11 @@ img {
   padding: 0 2rem;
 }
 
+.row {
+  width: 100%;
+  position: relative;
+}
+
 .container-sm {
   max-width: 1000px;
   margin: 0 auto;
@@ -46,7 +55,6 @@ img {
 }
 
 .section-header {
-  margin-top: 50px;
   text-align: center;
   margin-bottom: 40px;
   font-weight: 600;
@@ -55,7 +63,6 @@ img {
 /* Navbar */
 
 .navbar {
-  background: black;
   color: white;
   padding: 1rem 2rem;
   position: fixed;
@@ -63,6 +70,7 @@ img {
   right: 0;
   left: 0;
   z-index: 1000;
+  background-color: rgba(var(--dark-blue-rgb)); /* Użycie zmiennej RGB */
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -70,6 +78,7 @@ img {
   width: 100px;
   height: 50px;
   margin-right: 1rem;
+  cursor: pointer;
 }
 
 .navbar a {
@@ -105,7 +114,7 @@ img {
   width: 0;
   height: 2px;
   background-color: var(--light-purple);
-  transition: width 0.3s ease-in-out;
+  transition: width 0.2s ease-in-out;
 }
 
 .navbar a:hover {
@@ -124,6 +133,10 @@ img {
 
 .navbar a:hover i {
   color: var(--light-purple); /* Icon changes color on hover */
+}
+
+.navbar.navbar-scrolled {
+  background-color: rgba(46, 26, 71, 0.9); /* Mniej przezroczysty */
 }
 
 /* Mobile Menu */
@@ -172,12 +185,19 @@ img {
 }
 
 /* Hero Section */
+.row-hero{
+  padding-top: 100px;
+  padding-bottom: 20px ;
+  background-image: url(../assets/blob-haikei.svg);
+}
+
+
+
 .hero-section {
-  margin-top: 10rem;
   display: flex;
   align-items: stretch;
-  border: 1px solid #ddd;
   min-height: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hero-text {
@@ -186,15 +206,15 @@ img {
   text-align: center;
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
+  background-color: #fff;
 }
 
 .hero-text h1 {
-  margin-top: 5rem;
   font-size: 3rem;
 }
 
 .hero-text p {
-  margin: 5rem 0;
+  margin: 0rem 0;
 }
 
 .hero-carousel {
@@ -275,10 +295,24 @@ img {
   background-color: rgba(255, 255, 255, 1);
 }
 
+
+
+
+
 /* Oferta - Cards */
 
 
+.card-row{
+  background-image: url(../assets/blurry-gradient-haikei.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+
+
 .card-container {
+  margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -382,6 +416,50 @@ img {
   opacity: 1;
   visibility: visible;
 }
+
+/* Karuzela Opinie */
+
+.review-carousel {
+  margin: 20px auto;
+  max-width: 1200px;
+  overflow: hidden;
+}
+
+.review-item {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  margin: 5px;
+  box-sizing: border-box;
+  text-align: left;
+  position: relative;
+}
+
+.review-item .stars {
+  color: #ffb400;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.review-item p {
+  margin: 0 0 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.review-item .author {
+  font-weight: bold;
+  color: #555;
+}
+
+.slick-slide {
+  opacity: 1 !important;
+}
+
+.slick-track {
+  display: flex !important;
+}
+
 
 
 @media (max-width: 1200px) {

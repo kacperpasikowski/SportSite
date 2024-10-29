@@ -1,30 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="style/style.css" />
-    <title>Sport</title>
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="navbar-flex container">
-        <img src="assets/logo.svg" alt="" />
-        <div class="main-menu-items">
-          <ul class="main-menu-list">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <!-- Slick CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style/style.css" />
+  <title>Sport</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-flex container">
+      <img src="assets/logo.svg" class="logo" alt="" />
+      <div class="main-menu-items">
+        <ul class="main-menu-list">
+          <li>
+            <a href="#" class="link">Strona Główna</a>
+          </li>
+          <li>
+            <a href="#oferta" class="link">Oferta</a>
+          </li>
+          <li>
+            <a href="#cennik" class="link">Cennik</a>
+          </li>
+          <li>
+            <a href="#" class="link">Obozy</a>
+          </li>
+          <li>
+            <a href="#" class="link">Galeria</a>
+          </li>
+          <li>
+            <a href="#" class="link">O Nas</a>
+          </li>
+          <li>
+            <a href="#" class="link">Zapisz Się!</a>
+          </li>
+          <li>
+            <a href="facebook.com" target="_blank">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="instagram.com" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="facebook.com" target="_blank">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu">
+        <div class="mobile-menu-toggle">
+          <i class="fas fa-bars fa-2x"></i>
+        </div>
+        <!-- Mobile Items -->
+        <div class="mobile-menu-items">
+          <ul class="mobile-menu-list">
             <li>
               <a href="#" class="link">Strona Główna</a>
             </li>
@@ -63,59 +112,13 @@
             </li>
           </ul>
         </div>
-
-        <!-- Mobile Menu -->
-        <div class="mobile-menu">
-          <div class="mobile-menu-toggle">
-            <i class="fas fa-bars fa-2x"></i>
-          </div>
-          <!-- Mobile Items -->
-          <div class="mobile-menu-items">
-            <ul class="mobile-menu-list">
-              <li>
-                <a href="#" class="link">Strona Główna</a>
-              </li>
-              <li>
-                <a href="#oferta" class="link">Oferta</a>
-              </li>
-              <li>
-                <a href="#cennik" class="link">Cennik</a>
-              </li>
-              <li>
-                <a href="#" class="link">Obozy</a>
-              </li>
-              <li>
-                <a href="#" class="link">Galeria</a>
-              </li>
-              <li>
-                <a href="#" class="link">O Nas</a>
-              </li>
-              <li>
-                <a href="#" class="link">Zapisz Się!</a>
-              </li>
-              <li>
-                <a href="facebook.com" target="_blank">
-                  <i class="fa-brands fa-facebook"></i>
-                </a>
-              </li>
-              <li>
-                <a href="instagram.com" target="_blank">
-                  <i class="fa-brands fa-instagram"></i>
-                </a>
-              </li>
-              <li>
-                <a href="facebook.com" target="_blank">
-                  <i class="fa-brands fa-tiktok"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!--Hero Section  -->
-    <div class="container">
+  <!--Hero Section  -->
+  <div class="row row-hero">
+    <div class="container hero-container">
       <div class="hero-section">
         <div class="hero-text" id="hero-text">
           <h1 id="hero-title">Tytuł Slajdu 1</h1>
@@ -148,9 +151,13 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Ofert Section - Cards -->
-    <div class="container">
+
+
+  <!-- Ofert Section - Cards -->
+  <div class="row card-row">
+    <div class="container offert-container">
       <h1 class="section-header">Nasza oferta</h1>
       <div class="card-container">
         <div class="card">
@@ -202,62 +209,61 @@
             <div class="text">
               <h3>Cele Zajęć</h3>
               <p>Tutaj umieść opis celów zajęć tańca.</p>
-               <i class="fas fa-times close-overlay"></i>
+              <i class="fas fa-times close-overlay"></i>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quasi, id
-        autem iste consequuntur odit perspiciatis perferendis praesentium eius
-        libero velit quibusdam quia corrupti commodi debitis maiores omnis eos
-        enim voluptatum sapiente. Nesciunt pariatur beatae laboriosam animi non
-        ea, maxime cum cumque magni quaerat iste iure voluptate rerum unde
-        voluptatum eum, sit similique quibusdam reiciendis suscipit possimus
-        temporibus. Nesciunt, beatae possimus ullam odio maiores perspiciatis
-        amet quia, optio adipisci perferendis excepturi commodi at consequatur,
-        iusto alias! Aspernatur vero quisquam repudiandae architecto consequatur
-        explicabo pariatur sint enim doloremque accusamus quasi a optio animi
-        vel mollitia, sed voluptas, nemo in. Assumenda incidunt animi corporis
-        enim id asperiores distinctio sapiente nostrum. Ipsam dolorum facilis,
-        expedita architecto ipsum, perferendis vitae suscipit atque maxime, quos
-        delectus nemo aliquid aperiam. Placeat amet corrupti deleniti dolor
-        debitis fuga voluptatem quibusdam provident. Facere, doloremque. Neque
-        accusantium harum eos veritatis officia, commodi qui ad nam nesciunt,
-        rerum et velit corporis vel cum quisquam sequi, reprehenderit quidem
-        eius! Eius placeat iste, tempore iure voluptatem ut labore nam cumque,
-        sed illo error quaerat tempora provident sint id repudiandae quia
-        dolores quis ea qui mollitia maiores beatae? Quisquam, quae provident
-        odit aspernatur unde, debitis nulla iure odio voluptatum molestiae
-        officia quos possimus autem mollitia soluta. Eaque aspernatur numquam
-        perspiciatis facilis autem. Nesciunt fugiat nemo error neque, commodi
-        inventore, aspernatur saepe quo perferendis ut eos quia mollitia.
-        Perspiciatis exercitationem reiciendis cumque magni deleniti repellendus
-        aspernatur, delectus laborum harum similique repudiandae, expedita
-        deserunt temporibus distinctio. Repellendus quam adipisci, deleniti
-        necessitatibus, placeat non ipsum suscipit dolor quasi numquam illo nam,
-        reprehenderit eligendi. Beatae hic tempore possimus quis tenetur
-        laboriosam eaque fugit maxime facere repellendus expedita magni aliquid
-        esse molestias ipsa eligendi placeat, optio ratione, et nemo iusto nisi
-        eveniet! Error fuga numquam in dolorem illum dolore, illo neque? Quos
-        incidunt maxime placeat sint consectetur est. Unde distinctio aliquam
-        amet magni pariatur, provident quia? Impedit, quae. Beatae accusantium
-        sunt, a enim veritatis mollitia quidem explicabo in ullam fugiat
-        temporibus ab minima, dolore vero maiores, repudiandae quam hic. Minima
-        laboriosam eaque vitae qui dolorum aspernatur distinctio velit quos, non
-        voluptatum magnam repellendus sed reiciendis et at ex ea possimus?
-        Deleniti voluptatibus praesentium, incidunt tempore reprehenderit
-        architecto repellendus distinctio dolor fugiat placeat ad facilis esse
-        fugit aut, consectetur corporis optio, nesciunt assumenda tenetur quod.
-        Facere porro esse quia consectetur impedit accusamus pariatur mollitia
-        minus sed deleniti sapiente quis tempore doloribus laudantium nostrum
-        molestias dicta quas inventore, asperiores modi!
-      </p>
+
+  <!-- Placeholder dla opinii -->
+  <div class="review-carousel">
+    <div class="review-item">
+      <div class="stars">★★★★★</div>
+      <p>"Świetna obsługa i szybka realizacja!"</p>
+      <p class="author">- Jan Kowalski</p>
     </div>
+    <div class="review-item">
+      <div class="stars">★★★★☆</div>
+      <p>"Profesjonalizm na najwyższym poziomie."</p>
+      <p class="author">- Anna Nowak</p>
+    </div>
+    <div class="review-item">
+      <div class="stars">★★★★★</div>
+      <p>"Bardzo polecam tę firmę."</p>
+      <p class="author">- Piotr Wiśniewski</p>
+    </div>
+    <div class="review-item">
+      <div class="stars">★★★★☆</div>
+      <p>"Jestem zachwycony jakością usług."</p>
+      <p class="author">- Maria Wójcik</p>
+    </div>
+    <!-- Dodaj więcej opinii w ten sam sposób -->
+  </div>
 
-    <script src="js/script.js"></script>
-  </body>
+  <div class="container">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam molestiae cum aliquid molestias sunt, est ea.
+      Aliquam suscipit, vero quod eligendi voluptas minima dolor, architecto aliquid sapiente consequatur quis dolorum!
+    </p>
+  </div>
+
+
+
+
+
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Slick JS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+
+
+
+
+
 </html>

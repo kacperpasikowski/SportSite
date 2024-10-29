@@ -21,6 +21,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const heroTitle = document.getElementById("hero-title");
   const heroDescription = document.getElementById("hero-description");
 
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) { // Gdy przewiniemy o więcej niż 50px
+      navbar.classList.add('navbar-scrolled');
+    } else {
+      navbar.classList.remove('navbar-scrolled');
+    }
+  });
+
   const slideData = [
     {
       title: "Tytuł Slajdu 1",
@@ -120,6 +129,19 @@ document.addEventListener("DOMContentLoaded", function () {
       event.stopPropagation();
       const card = this.closest('.card');
       card.classList.remove('show-overlay');
+    });
+  });
+
+  //placeholder karuzela google
+  $(document).ready(function(){
+    $('.review-carousel').slick({
+      autoplay: true,
+      autoplaySpeed: 3000,
+      arrows: false,
+      dots: true,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
     });
   });
 });
