@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+  
+
   const toggleButton = document.querySelector(".navbar .mobile-menu-toggle i");
 
   const mobileMenu = document.querySelector(".navbar .mobile-menu-items");
@@ -20,15 +23,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const heroText = document.querySelector(".hero-text");
   const heroTitle = document.getElementById("hero-title");
   const heroDescription = document.getElementById("hero-description");
+  
+
+
+  const navbar = document.querySelector('.navbar');
+  console.log(navbar); // Sprawdź, czy navbar jest znaleziony
 
   window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
+    console.log('Scroll event fired'); // Sprawdź, czy zdarzenie scroll działa
+    console.log(window.scrollY); // Powinno wypisywać aktualną wartość scrolla
     if (window.scrollY > 50) { // Gdy przewiniemy o więcej niż 50px
       navbar.classList.add('navbar-scrolled');
+      console.log('Navbar scrolled class added'); // Informacja, że klasa została dodana
     } else {
       navbar.classList.remove('navbar-scrolled');
+      console.log('Navbar scrolled class removed'); // Informacja, że klasa została usunięta
     }
   });
+  
 
   const slideData = [
     {
@@ -133,15 +145,5 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   //placeholder karuzela google
-  $(document).ready(function(){
-    $('.review-carousel').slick({
-      autoplay: true,
-      autoplaySpeed: 3000,
-      arrows: false,
-      dots: true,
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-    });
-  });
+  
 });
