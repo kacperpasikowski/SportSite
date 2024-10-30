@@ -70,7 +70,7 @@ img {
   right: 0;
   left: 0;
   z-index: 1000;
-  background-color: rgba(var(--dark-blue-rgb)); /* Użycie zmiennej RGB */
+  background-color: transparent;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -113,12 +113,12 @@ img {
   bottom: 0;
   width: 0;
   height: 2px;
-  background-color: var(--light-purple);
+  background-color: var(--dark-blue);
   transition: width 0.2s ease-in-out;
 }
 
 .navbar a:hover {
-  color: var(--light-purple);
+  color: var(--dark-blue);
 }
 
 .navbar a:hover::after {
@@ -132,7 +132,7 @@ img {
 }
 
 .navbar a:hover i {
-  color: var(--light-purple); /* Icon changes color on hover */
+  color: var(--dark-blue); /* Icon changes color on hover */
 }
 
 .navbar.navbar-scrolled {
@@ -187,20 +187,24 @@ img {
 /* Hero Section */
 .row-hero{
   padding-top: 100px;
-  padding-bottom: 20px ;
-  background-image: url(../assets/blob-haikei.svg);
+  padding-bottom: 100px ;
+  background: #000 url('../assets/blurry-gradient-haikei.svg') center center/cover
+    no-repeat;
+
 }
 
 
 
 .hero-section {
+  border-radius: 25px;
   display: flex;
   align-items: stretch;
   min-height: 600px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 20px 20px 2px rgba(0, 0, 0, 0.1);
 }
 
 .hero-text {
+  border-radius: 25px 0px 0px 25px;
   flex: 1;
   padding: 2rem;
   text-align: center;
@@ -210,6 +214,7 @@ img {
 }
 
 .hero-text h1 {
+  font-weight: 400;
   font-size: 3rem;
 }
 
@@ -218,6 +223,7 @@ img {
 }
 
 .hero-carousel {
+  border-radius: 0px 25px 25px 0px;
   flex: 1;
   position: relative;
   overflow: hidden;
@@ -227,6 +233,7 @@ img {
   position: relative;
   width: 100%;
   height: 100%;
+  
 }
 
 .carousel-slide {
@@ -247,6 +254,7 @@ img {
 .carousel-slide img {
   width: 100%;
   height: 100%;
+  background: transparent;
   object-fit: cover;
 }
 
@@ -302,13 +310,10 @@ img {
 /* Oferta - Cards */
 
 
+
 .card-row{
-  background-image: url(../assets/blurry-gradient-haikei.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-
+  margin-top: 100px;
 }
-
 
 
 .card-container {
