@@ -398,6 +398,28 @@ svg{
 
 /* Oferta - Cards */
 
+.stain {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: #a953c2; /* Ustawia kolor plamy */
+  mask: url('../assets/stain.svg') no-repeat center / contain;
+  -webkit-mask: url('../assets/stain.svg') no-repeat center / contain; /* Dla przeglądarek WebKit */
+}
+
+.stain-1 {
+  left: 10px;
+  top: 50px;
+  z-index: 1000000;
+}
+
+.stain-2 {
+  left: 300px;
+  top: 150px;
+  background-color: #2e1a47; /* Inny kolor plamy */
+}
+
+
 .card-row {
   margin-top: 100px;
 }
@@ -407,6 +429,7 @@ svg{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  position: relative;
 }
 
 .card {
@@ -459,7 +482,7 @@ svg{
 }
 
 .learn-more {
-  background-color: #ff5a5f;
+  background-color: var(--dark-blue);
   color: #fff;
   border: none;
   margin-top: 10px;
@@ -474,7 +497,7 @@ svg{
 }
 
 .learn-more:hover {
-  background-color: #e04848;
+  background-color: var(--dark-purple);
 }
 
 .overlay {
