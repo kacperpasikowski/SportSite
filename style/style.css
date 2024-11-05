@@ -13,7 +13,7 @@
   --light-yellow: #fdf8b4;
   --dark-blue: #2e1a47;
   --dark-blue-rgb: 46, 26, 71; /* Dodane */
-  --my-gray: #f0f0f0;
+  --my-gray: #efefef;
 }
 
 html,
@@ -229,15 +229,15 @@ img {
 }
 
 .blob2{
-  width: 300px;
-  top: 200px;
-  right: 120px;
+  width: 400px;
+  top: 87px;
+  right: -50px;
 }
 
 .blob3{
-  width: 735px;
-  top: 200px;
-  left: -100px;
+  width: 700px;
+  bottom: 70px;
+  left: -150px;
 }
 
 .blob4{
@@ -374,7 +374,7 @@ svg{
 .wave-container {
   height: 11vh;
   background-color: #2e1a47;
-  position: relative;
+  position: relative; 
 }
 
 .wave-container::before {
@@ -387,7 +387,7 @@ svg{
   background-size: auto;
   background-repeat: repeat no-repeat;
   background-position: 49vw bottom;
-  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200  128' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 94L50 88C100 82 200 71 300 48C400 25 500 -10 600 2C700 13 800 71 900 94C1000 117 1100 105 1150 100L1200 94V129H1150C1100 129 1000 129 900 129C800 129 700 129 600 129C500 129 400 129 300 129C200 129 100 129 50 129H0V94Z' fill='%23ffffff'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200  128' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 94L50 88C100 82 200 71 300 48C400 25 500 -10 600 2C700 13 800 71 900 94C1000 117 1100 105 1150 100L1200 94V129H1150C1100 129 1000 129 900 129C800 129 700 129 600 129C500 129 400 129 300 129C200 129 100 129 50 129H0V94Z' fill='%23f0f0f0'/></svg>");
 }
 
 @media (max-width: 850px) {
@@ -400,28 +400,40 @@ svg{
 
 .stain {
   position: absolute;
-  width: 200px;
-  height: 200px;
-  background-color: #a953c2; /* Ustawia kolor plamy */
+  width: 150px;
+  height: 150px;
+  /* Ustawia kolor plamy */
   mask: url('../assets/stain.svg') no-repeat center / contain;
   -webkit-mask: url('../assets/stain.svg') no-repeat center / contain; /* Dla przeglądarek WebKit */
-}
-
-.stain-1 {
-  left: 10px;
-  top: 50px;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)); /* Dodany cień */
   z-index: 1000000;
 }
 
+.stain-1 {
+  left: -40px;
+  top: -40px;
+  background-color: var(--dark-purple);   
+
+}
+
 .stain-2 {
-  left: 300px;
-  top: 150px;
-  background-color: #2e1a47; /* Inny kolor plamy */
+  left: 45%;
+  top: -20px;
+  background-color: var(--dark-yellow); /* Inny kolor plamy */
+  transform: rotate(30deg);
+}
+
+.stain-3 {
+  left: 80%;
+  top: -100px;
+  background-color: var(--dark-purple); /* Inny kolor plamy */
+  transform: rotate(30deg);
 }
 
 
 .card-row {
-  margin-top: 100px;
+  padding-top: 60px;
+  background-color: var(--my-gray);
 }
 
 .card-container {
@@ -429,17 +441,19 @@ svg{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  position: relative;
+  position:relative;
 }
 
+
+
+
 .card {
-  position: relative;
   width: calc(33.333% - 20px);
   margin-bottom: 30px;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.5);
   display: flex; /* Dodano */
   flex-direction: column; /* Dodano */
 }
