@@ -12,7 +12,8 @@
   --dark-yellow: #fffb00;
   --light-yellow: #fdf8b4;
   --dark-blue: #2e1a47;
-  --dark-blue-rgb: 46, 26, 71; /* Dodane */
+  --dark-blue-rgb: 46, 26, 71;
+  /* Dodane */
   --my-gray: #efefef;
 }
 
@@ -28,6 +29,7 @@ body {
 a {
   text-decoration: none;
 }
+
 ul {
   list-style: none;
 }
@@ -40,7 +42,7 @@ img {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-  
+
 }
 
 .row {
@@ -74,11 +76,9 @@ img {
   z-index: 1000;
   background: transparent;
   transition: background-color 0.2s ease-in-out;
-  background: linear-gradient(
-    to bottom,
-    rgba(169, 83, 194, 0.9),
-    rgba(169, 83, 194, 0)
-  );
+  background: linear-gradient(to bottom,
+      rgba(169, 83, 194, 0.9),
+      rgba(169, 83, 194, 0));
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
   z-index: 2000;
 
@@ -137,8 +137,10 @@ img {
 }
 
 .navbar a i {
-  font-size: 1.5rem; /* Adjust icon size */
-  color: #fff; /* Initial color for icons */
+  font-size: 1.5rem;
+  /* Adjust icon size */
+  color: #fff;
+  /* Initial color for icons */
   transition: color 0.3s ease-in-out;
 }
 
@@ -147,11 +149,14 @@ img {
 }
 
 .navbar a:hover i {
-  color: var(--dark-yellow); /* Icon changes color on hover */
+  color: var(--dark-yellow);
+  /* Icon changes color on hover */
+  transform: scale(1.1);
 }
 
 .navbar.navbar-scrolled {
-  background-color: rgba(46, 26, 71, 0.9); /* Bardziej widoczny kolor */
+  background-color: rgba(46, 26, 71, 0.9);
+  /* Bardziej widoczny kolor */
   z-index: 10000000;
 }
 
@@ -203,100 +208,27 @@ img {
 /* Hero Section */
 .row-hero {
   position: relative;
-  padding-top: 130px;
-  padding-bottom: 100px;
-  background: var(dark);
-  background: linear-gradient(
-    0deg,
-    var(--dark-blue) 0%,
-    var(--dark-purple) 100%
-  );
-
+  padding: 0;
+  background: linear-gradient(0deg, var(--dark-blue) 0%, var(--dark-purple) 100%);
 }
-
-.blob1,
-.blob2,
-.blob3,
-.blob4{
-  position: absolute;
-  z-index: 1;
-}
-
-.blob1 {
-  top: -20px; /* Dostosuj wartość, aby uzyskać pożądany efekt */
-  left: -50px;
-  width: 300px; /* Możesz dostosować rozmiar */
-}
-
-.blob2{
-  width: 400px;
-  top: 87px;
-  right: -50px;
-}
-
-.blob3{
-  width: 700px;
-  bottom: 70px;
-  left: -150px;
-}
-
-.blob4{
-  width: 735px;
-  top: 400px;
-  right: -100px;
-  margin-left: 20px;
-}
-
-
-
-
-
-svg{
-  width: 100%;
-  height: auto;
-}
-
-
-
 
 .hero-section {
-  border-radius: 25px;
   display: flex;
-  align-items: stretch;
-  min-height: 600px;
-  box-shadow: 20px 20px 2px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 1500;
-
-}
-
-.hero-text {
-  border-radius: 25px 0px 0px 25px;
-  flex: 1;
-  padding: 2rem;
-  text-align: center;
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-  background-color: #fff;
-  z-index: 1000;
-}
-
-.hero-text h1 {
-  font-weight: 400;
-  font-size: 3rem;
-}
-
-.hero-text p {
-  margin: 0rem 0;
+  align-items: center;
+  padding: 0 150px;
+  justify-content: center;
+  width: 100%;
+  height: 87vh;
+  overflow: hidden;
+  position: relative; /* Dodano */
 }
 
 .hero-carousel {
-  border-radius: 0px 25px 25px 0px;
   flex: 1;
+  height: 100%;
   position: relative;
-  overflow: hidden;
+  z-index: 1; /* Upewnij się, że jest niższy niż hero-text */
 }
-
 
 .carousel {
   position: relative;
@@ -310,32 +242,57 @@ svg{
   left: 0;
   width: 100%;
   height: 100%;
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  transform: translateX(100%);
+  transition: opacity 1s ease-in-out;
   opacity: 0;
 }
 
 .carousel-slide.active {
-  transform: translateX(0);
   opacity: 1;
 }
+
 .carousel-slide img {
+  position: absolute;
+  top: 15%;
+  left: -12%;
   width: 100%;
   height: 100%;
-  background: transparent;
-  object-fit: cover;
+  object-fit: contain;
+  max-width: 80%;
+
+}
+
+.hero-text {
+  flex: 1;
+  padding: 2rem;
+  text-align: left;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  z-index: 2; /* Wyższy z-index niż hero-carousel */
+  position: relative;
+}
+
+.hero-text h1 {
+  font-weight: 500;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
 }
 
 .carousel-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.5);
+  color: #000;
   border: none;
   padding: 1rem;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  z-index: 3;
 }
 
 .carousel-button.prev {
@@ -347,34 +304,78 @@ svg{
 }
 
 .carousel-button:hover {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .carousel-indicators {
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
+  z-index: 3;
 }
 
 .carousel-indicators .indicator {
+  display: inline-block;
   width: 15px;
   height: 15px;
   background-color: rgba(255, 255, 255, 0.5);
   margin: 0 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  border-radius: 50%;
 }
 
 .carousel-indicators .indicator.active {
   background-color: rgba(255, 255, 255, 1);
 }
 
+/* Style dla blobów pozostają bez zmian */
+.blob1,
+.blob2,
+.blob3,
+.blob4 {
+  position: absolute;
+  z-index: 1;
+}
+
+.blob1 {
+  top: -20px;
+  left: -50px;
+  width: 300px;
+}
+
+.blob2 {
+  width: 400px;
+  top: 87px;
+  right: -50px;
+}
+
+.blob3 {
+  width: 700px;
+  bottom: 70px;
+  left: -150px;
+}
+
+.blob4 {
+  width: 735px;
+  top: 400px;
+  right: -100px;
+  margin-left: 20px;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+
 .wave-container {
   height: 11vh;
   background-color: #2e1a47;
-  position: relative; 
+  position: relative;
 }
 
 .wave-container::before {
@@ -404,29 +405,33 @@ svg{
   height: 150px;
   /* Ustawia kolor plamy */
   mask: url('../assets/stain.svg') no-repeat center / contain;
-  -webkit-mask: url('../assets/stain.svg') no-repeat center / contain; /* Dla przeglądarek WebKit */
-  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)); /* Dodany cień */
+  -webkit-mask: url('../assets/stain.svg') no-repeat center / contain;
+  /* Dla przeglądarek WebKit */
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+  /* Dodany cień */
   z-index: 1000000;
 }
 
 .stain-1 {
   left: -40px;
   top: -40px;
-  background-color: var(--dark-purple);   
+  background-color: var(--dark-purple);
 
 }
 
 .stain-2 {
   left: 45%;
   top: -20px;
-  background-color: var(--dark-yellow); /* Inny kolor plamy */
+  background-color: var(--dark-yellow);
+  /* Inny kolor plamy */
   transform: rotate(30deg);
 }
 
 .stain-3 {
   left: 80%;
   top: -100px;
-  background-color: var(--dark-purple); /* Inny kolor plamy */
+  background-color: var(--dark-purple);
+  /* Inny kolor plamy */
   transform: rotate(30deg);
 }
 
@@ -441,7 +446,7 @@ svg{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  position:relative;
+  position: relative;
 }
 
 
@@ -454,27 +459,33 @@ svg{
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.5);
-  display: flex; /* Dodano */
-  flex-direction: column; /* Dodano */
+  display: flex;
+  /* Dodano */
+  flex-direction: column;
+  /* Dodano */
 }
 
 .card-image {
   position: relative;
-  height: 300px; /* Ustawiona stała wysokość */
+  height: 300px;
+  /* Ustawiona stała wysokość */
   overflow: hidden;
 }
 
 .card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Zapewnia odpowiednie skalowanie obrazka */
+  object-fit: cover;
+  /* Zapewnia odpowiednie skalowanie obrazka */
 }
 
 .card-content {
   padding: 20px;
   background-color: #fff;
-  flex-grow: 1; /* Pozwala na równomierne rozłożenie treści */
-  position: relative; /* Dla pozycjonowania przycisku */
+  flex-grow: 1;
+  /* Pozwala na równomierne rozłożenie treści */
+  position: relative;
+  /* Dla pozycjonowania przycisku */
 }
 
 .card-content h2 {
@@ -505,7 +516,8 @@ svg{
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s ease;
-  position: absolute; /* Pozycjonowanie przycisku */
+  position: absolute;
+  /* Pozycjonowanie przycisku */
   bottom: 15px;
   right: 15px;
 }
@@ -584,21 +596,23 @@ svg{
   display: flex !important;
 }
 
-@media (max-width: 1200px) {
-}
-@media (max-width: 992px) {
-}
+@media (max-width: 1200px) {}
+
+@media (max-width: 992px) {}
+
 @media (max-width: 768px) {
   .main-menu-items {
     display: none;
   }
+
   .navbar .mobile-menu {
     display: block;
   }
+
   .navbar .mobile-menu-toggle {
     display: block;
     padding: 10px;
   }
 }
-@media (max-width: 576px) {
-}
+
+@media (max-width: 576px) {}
