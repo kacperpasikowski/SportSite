@@ -1,7 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-  
-
   const toggleButton = document.querySelector(".navbar .mobile-menu-toggle i");
 
   const mobileMenu = document.querySelector(".navbar .mobile-menu-items");
@@ -23,24 +20,22 @@ document.addEventListener("DOMContentLoaded", function () {
   const heroText = document.querySelector(".hero-text");
   const heroTitle = document.getElementById("hero-title");
   const heroDescription = document.getElementById("hero-description");
-  
 
-
-  const navbar = document.querySelector('.navbar');
+  const navbar = document.querySelector(".navbar");
   console.log(navbar); // Sprawdź, czy navbar jest znaleziony
 
-  window.addEventListener('scroll', function() {
-    console.log('Scroll event fired'); // Sprawdź, czy zdarzenie scroll działa
+  window.addEventListener("scroll", function () {
+    console.log("Scroll event fired"); // Sprawdź, czy zdarzenie scroll działa
     console.log(window.scrollY); // Powinno wypisywać aktualną wartość scrolla
-    if (window.scrollY > 50) { // Gdy przewiniemy o więcej niż 50px
-      navbar.classList.add('navbar-scrolled');
-      console.log('Navbar scrolled class added'); // Informacja, że klasa została dodana
+    if (window.scrollY > 50) {
+      // Gdy przewiniemy o więcej niż 50px
+      navbar.classList.add("navbar-scrolled");
+      console.log("Navbar scrolled class added"); // Informacja, że klasa została dodana
     } else {
-      navbar.classList.remove('navbar-scrolled');
-      console.log('Navbar scrolled class removed'); // Informacja, że klasa została usunięta
+      navbar.classList.remove("navbar-scrolled");
+      console.log("Navbar scrolled class removed"); // Informacja, że klasa została usunięta
     }
   });
-  
 
   const slideData = [
     {
@@ -59,91 +54,64 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   ];
 
-  let currentSlide = 0;
-
   const nextButton = document.querySelector(".carousel-button.next");
   const prevButton = document.querySelector(".carousel-button.prev");
 
+  let currentSlide = 0;
+
   function showSlide(index) {
-    // Animacja fade-out tekstu
-    heroText.style.opacity = 0;
+    slides.forEach((slide, idx) => {
+      slide.classList.toggle("active", idx === index);
+    });
 
-    // Po zakończeniu animacji fade-out, aktualizuj tekst i wykonaj fade-in
-    setTimeout(() => {
-      // Aktualizacja tekstu
-      heroTitle.textContent = slideData[index].title;
-      heroDescription.textContent = slideData[index].description;
+    indicators.forEach((indicator, idx) => {
+      indicator.classList.toggle("active", idx === index);
+    });
 
-      // Animacja fade-in tekstu
-      heroText.style.opacity = 1;
-    }, 500); // Czas trwania animacji musi być zgodny z transition w CSS
-
-    // Aktualizacja slajdów obrazów
-    slides.forEach((slide) => slide.classList.remove("active"));
-    indicators.forEach((indicator) => indicator.classList.remove("active"));
-
-    slides[index].classList.add("active");
-    indicators[index].classList.add("active");
+    // Aktualizacja tekstu z animacją
+    heroText.classList.remove("slide-in-right");
+    void heroText.offsetWidth; // Reflow dla resetowania animacji
+    heroTitle.textContent = slideData[index].title;
+    heroDescription.textContent = slideData[index].description;
+    heroText.classList.add("slide-in-right");
   }
 
   nextButton.addEventListener("click", () => {
     currentSlide = (currentSlide + 1) % slides.length;
     showSlide(currentSlide);
-    resetInterval();
   });
 
   prevButton.addEventListener("click", () => {
     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
     showSlide(currentSlide);
-    resetInterval();
   });
 
-  // Klikanie wskaźników slajdów
-  indicators.forEach((indicator) => {
-    indicator.addEventListener("click", (e) => {
-      currentSlide = parseInt(e.target.getAttribute("data-slide"));
+  indicators.forEach((indicator, idx) => {
+    indicator.addEventListener("click", () => {
+      currentSlide = idx;
       showSlide(currentSlide);
-      resetInterval();
     });
   });
 
-  // Automatyczne przełączanie slajdów co 5 sekund
-  // let slideInterval = setInterval(() => {
-  //   currentSlide = (currentSlide + 1) % slides.length;
-  //   showSlide(currentSlide);
-  // }, 5000);
-
-  // function resetInterval() {
-  //   clearInterval(slideInterval);
-  //   slideInterval = setInterval(() => {
-  //     currentSlide = (currentSlide + 1) % slides.length;
-  //     showSlide(currentSlide);
-  //   }, 5000);
-  // }
-
-  // Inicjalizacja pierwszego slajdu
+  // Inicjalizacja
   showSlide(currentSlide);
 
+  // OFERTA CARDS
 
-
-
-  // OFERTA CARDS 
-
-  document.querySelectorAll('.learn-more').forEach(function(button) {
-    button.addEventListener('click', function() {
-      const card = this.closest('.card');
-      card.classList.toggle('show-overlay');
+  document.querySelectorAll(".learn-more").forEach(function (button) {
+    button.addEventListener("click", function () {
+      const card = this.closest(".card");
+      card.classList.toggle("show-overlay");
     });
   });
 
-  document.querySelectorAll('.close-overlay').forEach(function(button) {
-    button.addEventListener('click', function(event) {
+  document.querySelectorAll(".close-overlay").forEach(function (button) {
+    button.addEventListener("click", function (event) {
       event.stopPropagation();
-      const card = this.closest('.card');
-      card.classList.remove('show-overlay');
+      const card = this.closest(".card");
+      card.classList.remove("show-overlay");
     });
   });
 
   //placeholder karuzela google
-  
 });
