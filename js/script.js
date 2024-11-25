@@ -15,103 +15,104 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const slides = document.querySelectorAll(".carousel-slide");
-  const indicators = document.querySelectorAll(".indicator");
-  const heroText = document.querySelector(".hero-text");
-  const heroTitle = document.getElementById("hero-title");
-  const heroDescription = document.getElementById("hero-description");
 
-  const navbar = document.querySelector(".navbar");
-  console.log(navbar); // Sprawdź, czy navbar jest znaleziony
 
-  window.addEventListener("scroll", function () {
-    console.log("Scroll event fired"); // Sprawdź, czy zdarzenie scroll działa
-    console.log(window.scrollY); // Powinno wypisywać aktualną wartość scrolla
-    if (window.scrollY > 50) {
-      // Gdy przewiniemy o więcej niż 50px
-      navbar.classList.add("navbar-scrolled");
-      console.log("Navbar scrolled class added"); // Informacja, że klasa została dodana
-    } else {
-      navbar.classList.remove("navbar-scrolled");
-      console.log("Navbar scrolled class removed"); // Informacja, że klasa została usunięta
-    }
-  });
+  
+
+  
 
   const slideData = [
     {
-      title: "Tytuł Slajdu 1",
-      description:
-        "Opis slajdu 1. Tutaj możesz umieścić dowolny tekst, który chcesz przekazać odwiedzającym.",
+      title: "Sport",
+        
     },
     {
-      title: "Tytuł Slajdu 2",
-      description:
-        "Opis slajdu 2. Tutaj możesz umieścić inny tekst dla drugiego slajdu.",
+      title: "Rozwój",
+        
     },
     {
-      title: "Tytuł Slajdu 3",
-      description: "Opis slajdu 3. To jest tekst dla trzeciego slajdu.",
+      title: "Zabawa",
+      
     },
+    {
+      title: "Kreatywność",
+      
+    }
   ];
 
-  const nextButton = document.querySelector(".carousel-button.next");
-  const prevButton = document.querySelector(".carousel-button.prev");
+  // Pobierz elementy tekstowe
+  const heroTitle = document.getElementById('hero-title');
+  const heroDescription = document.getElementById('hero-description');
+  const heroText = document.querySelector('.hero-text');
 
-  let currentSlide = 0;
+  // Pobierz indykatory
+  const indicators = document.querySelectorAll('.carousel-indicators-custom button');
 
-  function showSlide(index) {
-    slides.forEach((slide, idx) => {
-      slide.classList.toggle("active", idx === index);
-    });
+  // Pobierz przyciski nawigacyjne
+  const nextButton = document.querySelector(".carousel-control-next-custom");
+  const prevButton = document.querySelector(".carousel-control-prev-custom");
 
-    indicators.forEach((indicator, idx) => {
-      indicator.classList.toggle("active", idx === index);
-    });
+  // Inicjalizacja Bootstrap Carousel
+  const heroCarousel = document.querySelector('#heroCarousel');
+  const carousel = new bootstrap.Carousel(heroCarousel, {
+    interval: 5000,
+    ride: 'carousel',
+    pause: false,
+    wrap: true
+  });
 
-    // Aktualizacja tekstu z animacją
-    heroText.classList.remove("slide-in-right");
-    void heroText.offsetWidth; // Reflow dla resetowania animacji
-    heroTitle.textContent = slideData[index].title;
-    heroDescription.textContent = slideData[index].description;
-    heroText.classList.add("slide-in-right");
+
+  
+  // Inicjalizacja tekstu dla pierwszego slajdu
+  updateText(0);
+
+  // Funkcja do aktualizacji tekstu z animacją
+  function updateText(index) {
+    // Usuń animacje, jeśli są aktywne
+    heroText.classList.remove("fade-in", "fade-out");
+  
+    // Rozpocznij fade-out i natychmiast zmień tekst
+    heroText.classList.add("fade-out");
+  
+    setTimeout(() => {
+      // Zaktualizuj treść po krótkim czasie
+      heroTitle.textContent = slideData[index].title;
+      heroDescription.textContent = slideData[index].description;
+  
+      // Rozpocznij fade-in
+      heroText.classList.remove("fade-out");
+      heroText.classList.add("fade-in");
+    }, 300); // Skrócony czas fade-out (dopasuj do CSS)
   }
 
+  // Nasłuchiwanie na zmianę slajdu
+  heroCarousel.addEventListener('slide.bs.carousel', function (event) {
+    const nextSlide = event.to;
+  
+    // Zaktualizuj indykatory
+    indicators.forEach((indicator, idx) => {
+      indicator.classList.toggle("active", idx === nextSlide);
+    });
+  
+    // Zaktualizuj tekst
+    updateText(nextSlide);
+  });
+
+  // Obsługa kliknięć na indykatory
+  indicators.forEach((indicator, idx) => {
+    indicator.addEventListener("click", () => {
+      carousel.to(idx);
+      // Bootstrap automatycznie emituje 'slid.bs.carousel' po zakończeniu przejścia
+    });
+  });
+
+  // Obsługa kliknięć na przyciski nawigacyjne
   nextButton.addEventListener("click", () => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
+    carousel.next();
   });
 
   prevButton.addEventListener("click", () => {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
+    carousel.prev();
   });
 
-  indicators.forEach((indicator, idx) => {
-    indicator.addEventListener("click", () => {
-      currentSlide = idx;
-      showSlide(currentSlide);
-    });
-  });
-
-  // Inicjalizacja
-  showSlide(currentSlide);
-
-  // OFERTA CARDS
-
-  document.querySelectorAll(".learn-more").forEach(function (button) {
-    button.addEventListener("click", function () {
-      const card = this.closest(".card");
-      card.classList.toggle("show-overlay");
-    });
-  });
-
-  document.querySelectorAll(".close-overlay").forEach(function (button) {
-    button.addEventListener("click", function (event) {
-      event.stopPropagation();
-      const card = this.closest(".card");
-      card.classList.remove("show-overlay");
-    });
-  });
-
-  //placeholder karuzela google
 });
