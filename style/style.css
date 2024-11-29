@@ -26,6 +26,7 @@ body {
   scroll-behavior: smooth;
   height: 100%;
   margin: 0;
+  overflow-x: hidden;
 }
 
 a {
@@ -505,7 +506,6 @@ svg {
   position: relative;
   height: 300px;
   /* Ustawiona stała wysokość */
-  overflow: hidden;
 }
 
 .card-image img {
@@ -601,7 +601,6 @@ svg {
   display: flex;
   margin: 20px auto;
   max-width: 1200px;
-  overflow: hidden;
 }
 
 .review-item {
