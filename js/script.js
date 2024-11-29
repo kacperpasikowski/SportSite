@@ -15,6 +15,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  const navbar = document.querySelector(".navbar");
+  console.log(navbar); // Sprawdź, czy navbar jest znaleziony
+
+  window.addEventListener("scroll", function () {
+    console.log("Scroll event fired"); // Sprawdź, czy zdarzenie scroll działa
+    console.log(window.scrollY); // Powinno wypisywać aktualną wartość scrolla
+    if (window.scrollY > 50) {
+      // Gdy przewiniemy o więcej niż 50px
+      navbar.classList.add("navbar-scrolled");
+      console.log("Navbar scrolled class added"); // Informacja, że klasa została dodana
+    } else {
+      navbar.classList.remove("navbar-scrolled");
+      console.log("Navbar scrolled class removed"); // Informacja, że klasa została usunięta
+    }
+  });
+
+
 
 
   
