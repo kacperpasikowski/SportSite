@@ -494,7 +494,6 @@ svg {
   margin-bottom: 30px;
   border: 1px solid #ddd;
   border-radius: 6px;
-  overflow: hidden;
   box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.5);
   display: flex;
   /* Dodano */
