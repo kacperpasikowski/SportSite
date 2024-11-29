@@ -24,19 +24,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const slideData = [
     {
       title: "Sport",
-        
+      description: "Rozwijaj swoją sprawność fizyczną i umiejętności akrobatyczne pod okiem profesjonalistów. Osiągnij swoje cele z nami!"
     },
     {
       title: "Rozwój",
-        
+      description: "Odkrywaj swoje możliwości, przekraczaj granice i ucz się nowych rzeczy. Razem z nami osiągniesz to, co niemożliwe!"
     },
     {
       title: "Zabawa",
-      
+      description: "Zanurz się w świecie pełnym pasji i energii. Nauka w połączeniu z zabawą daje najlepsze efekty!"
+
     },
     {
       title: "Kreatywność",
-      
+      description: "Pobudź swoją wyobraźnię, twórz i wyrażaj siebie w nowych, zaskakujących formach ruchu."
+
     }
   ];
 

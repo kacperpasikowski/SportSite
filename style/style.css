@@ -47,12 +47,6 @@ img {
 
 }
 
-.row {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-
-}
 
 .container-sm {
   max-width: 1000px;
@@ -258,8 +252,7 @@ img {
 }
 
 .hero-text h1 {
-  margin-left: 150px;
-  margin-bottom: 100px;
+  margin-bottom: 20px;
   font-size: 5rem;
   font-weight: 700;
 }
@@ -450,7 +443,7 @@ svg {
   background-size: auto;
   background-repeat: repeat no-repeat;
   background-position: 49vw bottom;
-  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200  128' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 94L50 88C100 82 200 71 300 48C400 25 500 -10 600 2C700 13 800 71 900 94C1000 117 1100 105 1150 100L1200 94V129H1150C1100 129 1000 129 900 129C800 129 700 129 600 129C500 129 400 129 300 129C200 129 100 129 50 129H0V94Z' fill='%23f0f0f0'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200  128' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 94L50 88C100 82 200 71 300 48C400 25 500 -10 600 2C700 13 800 71 900 94C1000 117 1100 105 1150 100L1200 94V129H1150C1100 129 1000 129 900 129C800 129 700 129 600 129C500 129 400 129 300 129C200 129 100 129 50 129H0V94Z' fill='%23FFF'/></svg>");
 }
 
 @media (max-width: 850px) {
@@ -476,29 +469,6 @@ svg {
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
   /* Dodany cień */
   z-index: 1000000;
-}
-
-.stain-1 {
-  left: -40px;
-  top: -40px;
-  background-color: var(--dark-purple);
-
-}
-
-.stain-2 {
-  left: 45%;
-  top: -20px;
-  background-color: var(--dark-yellow);
-  /* Inny kolor plamy */
-  transform: rotate(30deg);
-}
-
-.stain-3 {
-  left: 80%;
-  top: -100px;
-  background-color: var(--dark-purple);
-  /* Inny kolor plamy */
-  transform: rotate(30deg);
 }
 
 
@@ -592,6 +562,37 @@ svg {
   background-color: var(--dark-purple);
 }
 
+.actions{
+  background-color: var(--dark-purple);
+  color: var(--dark-yellow);
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.actions i {
+  font-size: 1.5em;
+}
+
+.actions h5{
+  margin-top: 10px;
+}
+
+
+.content {
+  z-index: 10; /* Ustawiamy warstwę dla treści, aby była nad falami */
+  position: relative;
+}
+
+.icon img {
+  width: 60px; /* Dopasuj rozmiar ikonek */
+  height: 60px;
+}
+
+.icon p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333; /* Kolor tekstu */
+}
 
 
 /* Karuzela Opinie */
