@@ -17,16 +17,13 @@
   --my-gray: #efefef;
 }
 
-
-
 html,
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Baloo Bhai 2", sans-serif;
   line-height: 1.6;
   scroll-behavior: smooth;
   height: 100%;
   margin: 0;
-  overflow-x: hidden;
 }
 
 a {
@@ -41,13 +38,22 @@ img {
   max-width: 100%;
 }
 
+h1 {
+  font-family: "Baloo Bhai 2", sans-serif; /* lub inna czcionka */
+  font-size: 120px; /* Duży rozmiar, by obrys był widoczny */
+  color: var(--dark-purple); /* Kolor wypełnienia */
+  text-shadow: 0.125rem 0.125rem 0 #000000, -0.125rem 0.125rem 0 #000000,
+    0.125rem -0.125rem 0 #000000, -0.125rem -0.125rem 0 #000000,
+    0.125rem 0 0 #000000, -0.125rem 0 0 #000000, 0 0.125rem 0 #000000,
+    0 -0.125rem 0 #000000;
+  text-align: center; /* Wyrównanie */
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-
 }
-
 
 .container-sm {
   max-width: 1000px;
@@ -61,8 +67,6 @@ img {
   font-weight: 600;
 }
 
-
-
 /* Navbar */
 
 .navbar {
@@ -74,27 +78,28 @@ img {
   left: 0;
   z-index: 1000;
   background: transparent;
-  transition: background-color 0.2s ease-in-out;
-  /* background: linear-gradient(to bottom,
-      rgba(169, 83, 194, 0.9),
-      rgba(169, 83, 194, 0.9)); */
+
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
   z-index: 2000;
 
   opacity: 1;
 }
-.activenow-table-container{
+.activenow-table-container {
   background-color: var(--light-purple);
 }
 .navbar img {
-  width: 150px;
-  height: 150px;
-  margin-right: 1rem;
+  width: 85px;
+  height: 85px;
+
   cursor: pointer;
 }
 
 .navbar a {
   color: white;
+}
+
+.navbar li {
+  margin-top: 20px;
 }
 
 .navbar-flex {
@@ -146,7 +151,6 @@ img {
 }
 
 .logo {
-  width: 200px;
   filter: drop-shadow(5px 5px 2px rgba(0, 0, 0, 0.5));
 }
 
@@ -209,9 +213,13 @@ img {
 
 /* Hero Section */
 
-
 .hero-container {
   padding: 0;
+  background: linear-gradient(
+    0deg,
+    var(--light-purple) 0%,
+    var(--dark-purple) 100%
+  );
 }
 
 .row-hero {
@@ -220,12 +228,9 @@ img {
   padding: 2rem;
 }
 
-
 .carousel {
   height: 100%;
 }
-
-
 
 .carousel-image {
   width: auto;
@@ -237,21 +242,15 @@ img {
   /* Cień */
 }
 
-
 .carousel-image.carousel-kreatywnosc {
   width: auto;
   height: 150%;
   object-fit: cover;
 }
 
-
-
-
 .carousel-fade .active {
   opacity: 1;
 }
-
-
 
 /* Tekst hero sekcji */
 .hero-text {
@@ -260,18 +259,9 @@ img {
   justify-content: center;
   height: 100%;
   position: relative;
-  
+
   /* Obramowanie */
   z-index: 2;
-}
-
-.hero-text h1 {
-  margin-bottom: 20px;
-  font-size: 5rem;
-  font-weight: 700;
-  color: var(--dark-purple);
-  /* Wypełnienie */
-  -webkit-text-stroke: 3px black;
 }
 
 .hero-text p {
@@ -307,7 +297,6 @@ img {
 .carousel-control-next-custom {
   right: 20px;
 }
-
 
 .carousel-control-prev-custom .bi-chevron-left,
 .carousel-control-next-custom .bi-chevron-right {
@@ -347,8 +336,6 @@ img {
   animation: fadeIn 0.7s forwards;
 }
 
-
-
 .carousel-item {
   margin-top: 100px;
   display: block;
@@ -372,9 +359,6 @@ img {
   /* Fade-out dla slajdów, które opuszczają widok */
   transition: opacity 0.5s ease;
 }
-
-
-
 
 @keyframes fadeOut {
   from {
@@ -450,13 +434,9 @@ svg {
   height: auto;
 }
 
-
-
-
-
 .wave-container {
   height: 11vh;
-  background-color: #2e1a47;
+  background-color: var(--light-purple);
   position: relative;
 }
 
@@ -481,23 +461,21 @@ svg {
 
 /* Oferta - Cards */
 .cards {
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
 }
-
 
 .stain {
   position: absolute;
   width: 150px;
   height: 150px;
   /* Ustawia kolor plamy */
-  mask: url('../assets/stain.svg') no-repeat center / contain;
-  -webkit-mask: url('../assets/stain.svg') no-repeat center / contain;
+  mask: url("../assets/stain.svg") no-repeat center / contain;
+  -webkit-mask: url("../assets/stain.svg") no-repeat center / contain;
   /* Dla przeglądarek WebKit */
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
   /* Dodany cień */
   z-index: 1000000;
 }
-
 
 .card-row {
   padding-top: 60px;
@@ -511,9 +489,6 @@ svg {
   justify-content: space-between;
   gap: 30px;
 }
-
-
-
 
 .card {
   width: calc(33.333% - 20px);
@@ -555,6 +530,9 @@ svg {
   color: #333;
 }
 
+.svg-container{
+  overflow: hidden;
+}
 .card-content p {
   margin: 10px 0 50px 0px;
   color: #666;
@@ -592,6 +570,7 @@ svg {
   color: var(--dark-yellow);
   font-size: 1.5em;
   font-weight: 500;
+  overflow: hidden;
 }
 
 .actions i {
@@ -601,7 +580,6 @@ svg {
 .actions h5 {
   margin-top: 10px;
 }
-
 
 .content {
   z-index: 10;
@@ -621,7 +599,6 @@ svg {
   color: #333;
   /* Kolor tekstu */
 }
-
 
 /* Karuzela Opinie */
 
@@ -666,9 +643,11 @@ svg {
   display: flex !important;
 }
 
-@media (max-width: 1200px) {}
+@media (max-width: 1200px) {
+}
 
-@media (max-width: 992px) {}
+@media (max-width: 992px) {
+}
 
 @media (max-width: 768px) {
   .main-menu-items {
@@ -685,4 +664,5 @@ svg {
   }
 }
 
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+}
