@@ -35,20 +35,29 @@
     <title>Sport</title>
   </head>
 
-  <body>
+  <body
+    data-bs-spy="scroll"
+    data-bs-target=".navbar"
+    data-bs-offset="100"
+    tabindex="0"
+    data-bs-smooth-scroll="true"
+  >
     <nav class="navbar">
       <div class="navbar-flex container">
         <img src="assets/logo.svg" class="logo" alt="" />
         <div class="main-menu-items">
           <ul class="main-menu-list">
             <li>
-              <a href="#" class="link">Strona Główna</a>
+              <a href="#main" class="link active">Strona Główna</a>
             </li>
             <li>
-              <a href="#oferta" class="link">Oferta</a>
+              <a href="#offert" class="link">Oferta</a>
             </li>
             <li>
-              <a href="#cennik" class="link">Cennik</a>
+              <a href="#about-us" class="link">O Nas</a>
+            </li>
+            <li>
+              <a href="Cennik.html" class="link">Cennik</a>
             </li>
             <li>
               <a href="#" class="link">Obozy</a>
@@ -56,24 +65,31 @@
             <li>
               <a href="#" class="link">Galeria</a>
             </li>
-            <li>
-              <a href="#" class="link">O Nas</a>
-            </li>
+
             <li>
               <a href="#" class="link">Zapisz Się!</a>
             </li>
             <li>
-              <a href="facebook.com" target="_blank">
+              <a
+                href="https://www.facebook.com/profile.php?id=61568589570760"
+                target="_blank"
+              >
                 <i class="fa-brands fa-facebook"></i>
               </a>
             </li>
             <li>
-              <a href="instagram.com" target="_blank">
+              <a
+                href="https://www.instagram.com/flexyflow_akademiasportu/"
+                target="_blank"
+              >
                 <i class="fa-brands fa-instagram"></i>
               </a>
             </li>
             <li>
-              <a href="facebook.com" target="_blank">
+              <a
+                href="https://www.tiktok.com/@flexyflow.akademiasportu"
+                target="_blank"
+              >
                 <i class="fa-brands fa-tiktok"></i>
               </a>
             </li>
@@ -89,7 +105,7 @@
           <div class="mobile-menu-items">
             <ul class="mobile-menu-list">
               <li>
-                <a href="#" class="link">Strona Główna</a>
+                <a href="#home" class="link">Strona Główna</a>
               </li>
               <li>
                 <a href="#oferta" class="link">Oferta</a>
@@ -131,34 +147,9 @@
     </nav>
 
     <!--Hero Section  -->
-    <div class="container-fluid position-relative hero-container">
-      <!-- Dekoracyjne Bloby (opcjonalne) -->
-      <div class="blob blob1">
-        <!-- SVG Blob 1 -->
-        <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
-          <g transform="translate(433.794 326.255)">
-            <path
-              d="M142.2 -145.2C189.2 -95.2 235.6 -47.6 229.5 -6.1C223.4 35.4 164.7 70.7 117.7 111C70.7 151.4 35.4 196.7 -2.2 198.9C-39.8 201.2 -79.7 160.3 -116.8 120C-154 79.7 -188.5 39.8 -196 -7.5C-203.6 -54.9 -184.2 -109.8 -147 -159.8C-109.8 -209.8 -54.9 -254.9 -3.7 -251.3C47.6 -247.6 95.2 -195.2 142.2 -145.2"
-              fill="#fffb00"
-            ></path>
-          </g>
-        </svg>
-      </div>
-
-      <div class="blob blob2">
-        <!-- SVG Blob 2 -->
-        <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
-          <g transform="translate(433.794 326.255)">
-            <path
-              d="M142.2 -145.2C189.2 -95.2 235.6 -47.6 229.5 -6.1C223.4 35.4 164.7 70.7 117.7 111C70.7 151.4 35.4 196.7 -2.2 198.9C-39.8 201.2 -79.7 160.3 -116.8 120C-154 79.7 -188.5 39.8 -196 -7.5C-203.6 -54.9 -184.2 -109.8 -147 -159.8C-109.8 -209.8 -54.9 -254.9 -3.7 -251.3C47.6 -247.6 95.2 -195.2 142.2 -145.2"
-              fill="#fffb00"
-            ></path>
-          </g>
-        </svg>
-      </div>
-
+    <section class="container-fluid position-relative hero-container">
       <!-- Row Hero -->
-      <div class="row row-hero align-items-center justify-content-center">
+      <section class="row row-hero align-items-center justify-content-center">
         <!-- Karuzela (lewa kolumna) -->
         <div class="col-lg-6 col-md-12 mb-4">
           <div
@@ -166,10 +157,10 @@
             class="carousel slide carousel-fade"
             data-bs-ride="carousel"
           >
-            <div class="carousel-inner">
+            <div class="carousel-inner" id="main">
               <div class="carousel-item active" data-bs-interval="5000">
                 <img
-                  src="assets/karuzela-sport.png"
+                  src="assets/sport (5).png"
                   class="d-block w-100 carousel-image"
                   alt="Sport"
                 />
@@ -190,7 +181,7 @@
               </div>
               <div class="carousel-item" data-bs-interval="5000">
                 <img
-                  src="assets/karuzela-kreatywnosc.png"
+                  src="assets/kreatywnosc4.png"
                   class="d-block w-100 carousel-image carousel-"
                   alt="Kreatywność"
                 />
@@ -201,12 +192,12 @@
 
         <!-- Tekst (prawa kolumna) -->
         <div class="col-lg-6 col-md-12">
-          <div class="hero-text text-center text-white me-5">
+          <div class="hero-text text-white me-5">
             <h1 id="hero-title"></h1>
-            <p id="hero-description" class="lead text-center"></p>
+            <p id="hero-description" class="lead"></p>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- Nawigacyjne Strzałki (po obu stronach ekranu) -->
       <button
@@ -259,80 +250,226 @@
           aria-label="Slajd 4"
         ></button>
       </div>
-    </div>
+    </section>
 
     <div class="wave-container"></div>
 
     <!-- Ofert Section - Cards -->
 
-    <div class="row card-row">
+    <section class="row card-row pb-3" id="offert">
       <div class="container-bg offert-container mb-3 mt-3">
         <h1 class="section-header offer-header">Nasza oferta</h1>
-        <div class="card-container ">
-          <div class="card ms-4">
-            <div class="card-image">
-              <img src="assets/card-acrobatic.png" alt="Akrobatyka" />
-            </div>
-            <div class="card-content">
-              <h2>Akrobatyka</h2>
-              <p>
-                Niezależnie od wieku i poziomu zaawansowania zajęcia z akrobatyki
-                są dla Ciebie!
-              </p>
-              <button class="learn-more">Zapisz Się!</button>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-image">
+                <img src="assets/card-acrobatic.png" alt="Akrobatyka" />
+              </div>
+              <div class="card-content">
+                <h2>Akrobatyka</h2>
+                <p>
+                  Niezależnie od wieku i poziomu zaawansowania zajęcia z
+                  akrobatyki są dla Ciebie!
+                </p>
+                <button class="learn-more">Zapisz Się!</button>
+              </div>
             </div>
           </div>
           <!-- Druga karta -->
-          <div class="card">
-            <div class="card-image">
-              <img src="assets/card-yoga.png" alt="joga" />
-            </div>
-            <div class="card-content">
-              <h2>Joga</h2>
-              <p>
-                Odkryj harmonię ciała i umysłu na zajęciach jogi, zadbaj o zdrowie
-                i wewnętrzny spokój w przyjaznej atmosferze.
-              </p>
-              <button class="learn-more">Zapisz Się!</button>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-image">
+                <img src="assets/card-yoga.png" alt="joga" />
+              </div>
+              <div class="card-content">
+                <h2>Joga</h2>
+                <p>
+                  Odkryj harmonię ciała i umysłu na zajęciach jogi, zadbaj o
+                  zdrowie i wewnętrzny spokój w przyjaznej atmosferze.
+                </p>
+                <button class="learn-more">Zapisz Się!</button>
+              </div>
             </div>
           </div>
           <!-- Trzecia karta -->
-          <div class="card">
-            <div class="card-image">
-              <img src="assets/card-dance.png" alt="Taniec" />
-            </div>
-            <div class="card-content">
-              <h2>Taniec</h2>
-              <p>
-                Zajęcia taneczne dla dzieci to połączenie ruchu, muzyki i świetnej
-                zabawy!
-              </p>
-              <button class="learn-more">Zapisz Się!</button>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-image">
+                <img src="assets/card-dance.png" alt="Taniec" />
+              </div>
+              <div class="card-content">
+                <h2>Taniec</h2>
+                <p>
+                  Zajęcia taneczne dla dzieci to połączenie ruchu, muzyki i
+                  świetnej zabawy!
+                </p>
+                <button class="learn-more">Zapisz Się!</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    
-    
+    </section>
+
     <div class="wave-container-yellow-rotated"></div>
 
-
-    <div class="row about-us-row">
-      <section class="about-us container-bg my-4">
-        <div class=" text-center">
-          <div class="row align-items-center">
-            <div class="col-md-3">
-              <img src="assets/card-yoga.png" alt="Logo firmy" class="img-fluid " />
+    <div id="about-us">
+      <section class="row about-us-row">
+        <section class="about-us container-bg my-4">
+          <div class="">
+            <div class="row align-items-center">
+              <div class="col-12 col-md-5">
+                <img
+                  src="assets/dlugielogo.svg"
+                  alt="Logo firmy"
+                  class=""
+                />
+              </div>
+              <div class="col-12 col-md-7">
+                <h2 class="section-title mb-0 ">Kim jesteśmy?</h2>
+                <p class=" ">
+                  Specjalizujemy się w organizacji zajęć grupowych i
+                  indywidualnych z akrobatyki, jogi oraz tańca, dostosowanych do
+                  różnych grup wiekowych i poziomów zaawansowania. Oferujemy
+                  dynamiczne treningi, które rozwijają siłę, elastyczność i
+                  koordynację, a także zajęcia relaksacyjne wspierające harmonię
+                  ciała i umysłu. Nasze zajęcia prowadzone są w różnych
+                  lokalizacjach, co pozwala na wygodny wybór miejsca i czasu.
+                  Dzięki wykwalifikowanym instruktorom oraz przyjaznej
+                  atmosferze, pomagamy uczestnikom odkrywać ich potencjał i
+                  czerpać radość z aktywności fizycznej.
+                </p>
+              </div>
             </div>
-            <div class="col-md-9">
-              <h2 class="section-title mb-4 text-start">Kim jesteśmy?</h2>
-              <p class="text-start">
-                Jesteśmy grupą profesjonalistów, którzy z pasją podchodzą do
-                rozwijania talentów i umiejętności. Naszym celem jest stworzenie
-                inspirującego środowiska, które pozwoli Ci osiągnąć swoje cele
-                i czerpać radość z aktywności fizycznej.
-                Dołącz do nas i razem osiągajmy sukcesy!
+          </div>
+        </section>
+      </section>
+      <div class="wave-container-yellow"></div>
+      <div class="svg-container">
+        <div class="carousel-icons-container">
+          <!-- Dla dużych ekranów (animacja) -->
+          <div class="carousel-icons d-flex d-lg-flex d-none">
+            <!-- Oryginalne elementy + duplikaty dla animacji -->
+            <section>
+              <i class="bi bi-people-fill"></i>
+              <h5>Indywidualne Podejście</h5>
+            </section>
+            <section>
+              <i class="bi bi-person-badge-fill"></i>
+              <h5>Wykwalifikowana Kadra</h5>
+            </section>
+            <section>
+              <i class="bi bi-trophy-fill"></i>
+              <h5>Pasja Do Sportu</h5>
+            </section>
+            <section>
+              <i class="bi bi-shield-fill-check"></i>
+              <h5>Troska o Bezpieczeństwo</h5>
+            </section>
+            <section>
+              <i class="bi bi-journal-check"></i>
+              <h5>Profesjonalny Sprzęt</h5>
+            </section>
+            <!-- Duplikaty -->
+            <section>
+              <i class="bi bi-people-fill"></i>
+              <h5>Indywidualne Podejście</h5>
+            </section>
+            <section>
+              <i class="bi bi-person-badge-fill"></i>
+              <h5>Wykwalifikowana Kadra</h5>
+            </section>
+            <section>
+              <i class="bi bi-trophy-fill"></i>
+              <h5>Pasja Do Sportu</h5>
+            </section>
+            <section>
+              <i class="bi bi-shield-fill-check"></i>
+              <h5>Troska o Bezpieczeństwo</h5>
+            </section>
+            <section>
+              <i class="bi bi-journal-check"></i>
+              <h5>Profesjonalny Sprzęt</h5>
+            </section>
+          </div>
+      
+          <!-- Dla mniejszych ekranów (siatka Bootstrap) -->
+          <div class="carousel-icons row d-lg-none mb-0 ms-2">
+            <div class="row mb-0 pb-0">
+              <!-- Oryginalne elementy -->
+              <div class="col-6 text-center d-flex flex-column align-items-center mb-5 pb-2">
+                <section>
+                  <i class="bi bi-people-fill mb-2"></i>
+                  <h5 class="text-center">Indywidualne Podejście</h5>
+                </section>
+              </div>
+              <div class="col-6 text-center d-flex flex-column align-items-center">
+                <section>
+                  <i class="bi bi-person-badge-fill mb-2"></i>
+                  <h5 class="text-center">Wykwalifikowana Kadra</h5>
+                </section>
+              </div>
+              <div class="col-6 text-center d-flex flex-column align-items-center">
+                <section>
+                  <i class="bi bi-shield-fill-check mb-2"></i>
+                  <h5 class="text-center">Troska o Bezpieczeństwo</h5>
+                </section>
+              </div>
+              <div class="col-6 text-center d-flex flex-column align-items-center">
+                <section>
+                  <i class="bi bi-journal-check mb-2"></i>
+                  <h5 class="text-center">Profesjonalny Sprzęt</h5>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wave-container-purple"></div>
+      </div>
+      
+      <!-- INSTRUKTORZY  -->
+      <section class="instructors py-5">
+        <div class="container-bg">
+          <h2 class="section-title text-center mb-5">
+            Poznaj Naszych Instruktorów
+          </h2>
+          <!-- Instruktor 1 -->
+          <div class="row mb-5">
+            <div class="col-md-6">
+              <img
+                src="assets/onas_jasiu.png"
+                alt="Instruktor 1"
+                class="img-fluid rounded shadow"
+              />
+            </div>
+            <div class="col-md-6">
+              <h3>Jasiek</h3>
+              <p class="text-muted">
+                Założyciel FlexyFlow, trener akrobatyki z wieloletnim
+                doświadczeniem, nauczyciel wychowania fizycznego, trener
+                personalny, w trakcie magisterki na kierunku trener
+                przygotowania motorycznego z elementami dietetyki. Na co dzień
+                uprawiam wszystkie sporty świata z naciskiem na tricking,
+                akrobatykę i kalistenikę.
+              </p>
+            </div>
+          </div>
+          <!-- Instruktor 2 -->
+          <div class="row mb-4 flex-row-reverse">
+            <div class="col-md-6">
+              <img
+                src="assets/onas_patka.png"
+                alt="Instruktor 2"
+                class="img-fluid rounded shadow"
+              />
+            </div>
+            <div class="col-md-6">
+              <h3 class="text-dark text-md-end text-center pe-1">Patrycja</h3>
+              <p class="text-muted text-wrap text-md-end text-center">
+                Trenerka tańca dla dzieci w wieku przedszkolnym i
+                wczesnoszkolnym, instruktorka jogi. Magister pedagogiki
+                przedszkolnej i wczesnoszkolnej z kilkuletnim doświadczeniem w
+                pracy w przedszkolu.
               </p>
             </div>
           </div>
@@ -340,129 +477,7 @@
       </section>
     </div>
 
-    
-    <div class="wave-container-yellow"></div>
-
-    <div class="svg-container">
-      <div class="carousel-icons-container">
-        <div class="carousel-icons">
-          <!-- Oryginalne elementy -->
-          <section>
-            <i class="bi bi-people-fill"></i>
-            <h5>Indywidualne Podejście</h5>
-          </section>
-          <section>
-            <i class="bi bi-person-badge-fill"></i>
-            <h5>Wykwalifikowana Kadra</h5>
-          </section>
-          <section>
-            <i class="bi bi-trophy-fill"></i>
-            <h5>Pasja Do Sportu</h5>
-          </section>
-          <section>
-            <i class="bi bi-shield-fill-check"></i>
-            <h5>Troska o Bezpieczeństwo</h5>
-          </section>
-          <section>
-            <i class="bi bi-journal-check"></i>
-            <h5>Profesjonalny Sprzęt</h5>
-          </section>
-      
-          <!-- Duplikaty (powtórzenie oryginalnych elementów) -->
-          <section>
-            <i class="bi bi-people-fill"></i>
-            <h5>Indywidualne Podejście</h5>
-          </section>
-          <section>
-            <i class="bi bi-person-badge-fill"></i>
-            <h5>Wykwalifikowana Kadra</h5>
-          </section>
-          <section>
-            <i class="bi bi-trophy-fill"></i>
-            <h5>Pasja Do Sportu</h5>
-          </section>
-          <section>
-            <i class="bi bi-shield-fill-check"></i>
-            <h5>Troska o Bezpieczeństwo</h5>
-          </section>
-          <section>
-            <i class="bi bi-journal-check"></i>
-            <h5>Profesjonalny Sprzęt</h5>
-          </section>
-        </div>
-      </div>
-      
-      <div class="wave-container-purple"></div>
-    </div>
-
-    <!-- INSTRUKTORZY  -->
-
-    <section class="instructors py-5">
-      <div class="container-bg">
-        <h2 class="section-title text-center mb-5">Poznaj naszych instruktorów</h2>
-    
-        <!-- Instruktor 1 -->
-        <div class="row mb-5">
-          <div class="col-md-6">
-            <img src="assets/onas_jasiu.png" alt="Instruktor 1" class="img-fluid rounded shadow">
-          </div>
-          <div class="col-md-6">
-            <h3>Jasiek</h3>
-            <p class="text-muted">
-              Założyciel FlexyFlow, trener akrobatyki z wieloletnim doświadczeniem, 
-              nauczyciel wychowania fizycznego, trener personalny, w trakcie magisterki na 
-              kierunku trener przygotowania motorycznego z elementami dietetyki.
-              Na co dzień uprawiam wszystkie sporty świata z naciskiem na tricking, akrobatykę i kalistenikę. 
-            </p>
-          </div>
-        </div>
-    
-        <!-- Instruktor 2 -->
-        <div class="row mb-4 flex-row-reverse">
-          <div class="col-md-6">
-            <img src="assets/onas_patka.png" alt="Instruktor 2" class="img-fluid rounded shadow">
-          </div>
-          <div class="col-md-6">
-            <h3 class="text-dark text-end pe-4">Patrycja</h3>
-            <p class="text-muted text-wrap text-end">
-              Trenerka tańca dla dzieci w wieku przedszkolnym i wczesnoszkolnym,
-              instruktorka jogi. 
-              Magister pedagogiki przedszkolnej i wczesnoszkolnej z kilkuletnim doświadczeniem w pracy w przedszkolu.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-
     <!-- Placeholder dla opinii -->
-    <div class="row opinion-row">
-      <div class="review-carousel">
-        <div class="review-item">
-          <div class="stars">★★★★★</div>
-          <p>"Świetna obsługa i szybka realizacja!"</p>
-          <p class="author">- Jan Kowalski</p>
-        </div>
-        <div class="review-item">
-          <div class="stars">★★★★☆</div>
-          <p>"Profesjonalizm na najwyższym poziomie."</p>
-          <p class="author">- Anna Nowak</p>
-        </div>
-        <div class="review-item">
-          <div class="stars">★★★★★</div>
-          <p>"Bardzo polecam tę firmę."</p>
-          <p class="author">- Piotr Wiśniewski</p>
-        </div>
-        <div class="review-item">
-          <div class="stars">★★★★☆</div>
-          <p>"Jestem zachwycony jakością usług."</p>
-          <p class="author">- Maria Wójcik</p>
-        </div>
-      </div>
-    </div>
-
-    
-
     <footer class="bg-dark text-white py-5">
       <div class="container">
         <div class="row">
@@ -470,16 +485,28 @@
           <div class="col-md-3 mb-2">
             <h5>FlexyFlow</h5>
             <p>
-              Tworzymy przestrzeń dla miłośników sportu, aby dzielić się pasją, rozwijać umiejętności i poznawać ludzi o podobnych zainteresowaniach.
+              Tworzymy przestrzeń dla miłośników sportu, aby dzielić się pasją,
+              rozwijać umiejętności i poznawać ludzi o podobnych
+              zainteresowaniach.
             </p>
           </div>
           <!-- Quick Links Section -->
           <div class="col-md-3 mb-2">
             <h5>Szybkie linki</h5>
             <ul class="list-unstyled">
-              <li><a href="#home" class="text-white text-decoration-none">Strona główna</a></li>
-              <li><a href="#about" class="text-white text-decoration-none">O nas</a></li>
-              <li><a href="#contact" class="text-white text-decoration-none">Kontakt</a></li>
+              <li>
+                <a href="#home" class="text-white">Strona główna</a>
+              </li>
+              <li>
+                <a href="#about" class="text-white text-decoration-none"
+                  >O nas</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="text-white text-decoration-none"
+                  >Kontakt</a
+                >
+              </li>
             </ul>
           </div>
           <!-- Social Media Section -->
@@ -487,95 +514,45 @@
             <h5>Materiały do pobrania</h5>
             <div class="d-flex">
               <ul class="list-unstyled">
-                <li><a href="#home" class="text-white text-decoration-none">Materiał 1</a></li>
-                <li><a href="#about" class="text-white text-decoration-none">Materiał 2</a></li>
-                <li><a href="#contact" class="text-white text-decoration-none">Materiał 3</a></li>
+                <li>
+                  <a href="#home" class="text-white text-decoration-none"
+                    >Materiał 1</a
+                  >
+                </li>
+                <li>
+                  <a href="#about" class="text-white text-decoration-none"
+                    >Materiał 2</a
+                  >
+                </li>
+                <li>
+                  <a href="#contact" class="text-white text-decoration-none"
+                    >Materiał 3</a
+                  >
+                </li>
               </ul>
             </div>
           </div>
           <div class="col-md-3 mb-3">
             <h5>Znajdź nas</h5>
             <div class="d-flex">
-              <a href="https://facebook.com" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
-              <a href="https://instagram.com" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
-              <a href="https://youtube.com" class="text-white"><i class="fab fa-tiktok fa-lg"></i></a>
+              <a href="https://facebook.com" class="text-white me-3"
+                ><i class="fab fa-facebook fa-lg"></i
+              ></a>
+              <a href="https://instagram.com" class="text-white me-3"
+                ><i class="fab fa-instagram fa-lg"></i
+              ></a>
+              <a href="https://youtube.com" class="text-white"
+                ><i class="fab fa-tiktok fa-lg"></i
+              ></a>
             </div>
           </div>
         </div>
-        <hr class="border-top border-secondary">
+        <hr class="border-top border-secondary" />
         <div class="text-center">
           <p class="mb-0">&copy; 2024 FlexyFlow. Wszelkie prawa zastrzeżone.</p>
         </div>
       </div>
     </footer>
-
-    
-    <!-- ANIMATION BLOBS -->
-
-    <script>
-      const tween = KUTE.fromTo(
-        "#blob1",
-        {
-          path: "#blob1",
-        },
-        {
-          path: "#blob2",
-        },
-        {
-          repeat: 1000,
-          duration: 3500,
-          yoyo: true,
-        }
-      );
-
-      const tween2 = KUTE.fromTo(
-        "#blob3",
-        {
-          path: "#blob3",
-        },
-        {
-          path: "#blob4",
-        },
-        {
-          repeat: 1000,
-          duration: 2000,
-          yoyo: true,
-        }
-      );
-      const tween3 = KUTE.fromTo(
-        "#blob5",
-        {
-          path: "#blob5",
-        },
-        {
-          path: "#blob6",
-        },
-        {
-          repeat: 1000,
-          duration: 1800,
-          yoyo: true,
-        }
-      );
-      const tween4 = KUTE.fromTo(
-        "#blob7",
-        {
-          path: "#blob7",
-        },
-        {
-          path: "#blob8",
-        },
-        {
-          repeat: 1000,
-          duration: 2500,
-          yoyo: true,
-        }
-      );
-
-      tween.start();
-      tween2.start();
-      tween3.start();
-      tween4.start();
-    </script>
 
     <script src="js/script.js"></script>
     <script

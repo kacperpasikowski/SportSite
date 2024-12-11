@@ -31,9 +31,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  
 
 
 
+  
   
 
   
@@ -133,5 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
   prevButton.addEventListener("click", () => {
     carousel.prev();
   });
+
+  
 
 });
