@@ -254,7 +254,6 @@ h1 {
 .row-hero {
   min-height: 87vh;
   position: relative;
-  padding: 2rem;
 }
 
 .carousel {
@@ -953,9 +952,7 @@ header h1 {
     font-size: 16px;
   }
 
-  .about-us-row .col-12 {
-    text-align: center; /* Zapewnienie, że obraz jest wyśrodkowany */
-  }
+  
   .about-us h2{
     text-align: center;
   }
@@ -963,7 +960,6 @@ header h1 {
   .navbar img {
     width: 51px;
     height: 51px;
-  
     cursor: pointer;
   }
   .main-menu-list li a{
@@ -988,6 +984,11 @@ header h1 {
   .instructors p{
     font-size: 10px;
   }
+
+  .about-us img{
+    margin: 0 auto;
+    width: 350px;
+  };
   
 
   .navbar .main-menu-list {
@@ -999,9 +1000,7 @@ header h1 {
     font-size: 18px;
     
   }
-  .about-us img{
-    width: 60%;
-  }
+  
   
   
   .card p{
@@ -1025,12 +1024,13 @@ header h1 {
   }
 
   .hero-text h1 {
-    margin-left: 16px;
+    text-align: center;
+    margin-left: 50px;
     font-size: 4.1rem;
   }
 
   .hero-text p {
-    margin-left: 20px;
+    margin-left: 50px;
     font-size: 1.5rem;
   }
   .offert-container h1{
@@ -1039,6 +1039,17 @@ header h1 {
     0.1rem -0.1rem 0 #000000, -0.1rem -0.1rem 0 #000000,
     0.1rem 0 0 #000000, -0.1rem 0 0 #000000, 0 0.1rem 0 #000000,
     0 -0.1rem 0 #000000;
+  }
+
+  .carousel-icons h5 {
+    font-size: 1.2rem;
+    color: var(--dark-yellow);
+    /* Zawijanie słów, jeśli są zbyt długie */
+    white-space: normal; /* Wymuszenie normalnego zawijania */
+    text-align: start; /* Wyśrodkowanie tekstu */
+  }
+  .carousel-icons i {
+    font-size: 2.2rem; /* Zmniejszenie ikon */
   }
 
 }
@@ -1058,7 +1069,8 @@ header h1 {
     overflow-x: hidden;
   }
   .instructors h2 {
-    font-size: 4rem;
+    font-size: 3rem;
+    font-family: "Baloo Bhai 2", sans-serif;;
     margin: 20px auto;
     text-shadow: 0.1rem 0.1rem 0 #000000, -0.1rem 0.1rem 0 #000000,
     0.1rem -0.1rem 0 #000000, -0.1rem -0.1rem 0 #000000,
@@ -1098,5 +1110,51 @@ header h1 {
   
     cursor: pointer;
   }
+
+  .about-us img{
+    width: 250px;
+    margin-left: 50px;
+  }
+  
+}
+
+
+@media (max-width: 320px){
+  .row-hero h1{
+
+    text-align: center;
+    font-size: 40px;
+    
+  }
+
+  .row-hero p{
+    text-align: center;
+    margin-left: 40px;
+  }
+
+  .instructors h2{
+    font-size: 45px;
+    margin: 0 auto;
+  }
+
+  .instructors h3{
+    font-size: 3.5rem;
+  }
+
+  .about-us img{
+    width: 200px;
+    margin-left: 40px;
+  }
+
+
+  .about-us p{
+    text-align: center;
+  }
+
+  .navbar img{
+    width: 45px;
+    height: 45px;
+  }
+
   
 }
