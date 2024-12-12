@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const toggleButton = document.querySelector(".navbar .mobile-menu-toggle i");
-
   const mobileMenu = document.querySelector(".navbar .mobile-menu-items");
+  const menuLinks = document.querySelectorAll(".mobile-menu-items .link");
+
 
   toggleButton.addEventListener("click", function () {
     mobileMenu.classList.toggle("active");
@@ -15,75 +16,75 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+
+  // menuLinks.forEach(link => {
+  //   link.addEventListener("click", function () {
+  //     setTimeout(() => {
+  //       mobileMenu.classList.remove("active");
+  //       toggleButton.classList.remove("fa-times");
+  //       toggleButton.classList.add("fa-bars");
+  //     }, 200); // Opóźnienie w milisekundach (500ms = 0.5s)
+  //   });
+  // });
+
   const navbar = document.querySelector(".navbar");
   console.log(navbar); // Sprawdź, czy navbar jest znaleziony
 
   window.addEventListener("scroll", function () {
-    console.log("Scroll event fired"); // Sprawdź, czy zdarzenie scroll działa
-    console.log(window.scrollY); // Powinno wypisywać aktualną wartość scrolla
+
     if (window.scrollY > 50) {
-      // Gdy przewiniemy o więcej niż 50px
       navbar.classList.add("navbar-scrolled");
-      console.log("Navbar scrolled class added"); // Informacja, że klasa została dodana
     } else {
       navbar.classList.remove("navbar-scrolled");
-      console.log("Navbar scrolled class removed"); // Informacja, że klasa została usunięta
     }
   });
-
-  
-
-
-
-  
-  
-
-  
 
   const slideData = [
     {
       title: "Sport",
-      description: "Rozwijaj swoją sprawność fizyczną i umiejętności akrobatyczne pod okiem profesjonalistów. Osiągnij swoje cele z nami!"
+      description:
+        "Sport to nie tylko wysiłek fizyczny, ale przede wszystkim sposób na odkrywanie siebie, przekraczanie granic i czerpanie radości z ruchu. W naszej ofercie znajdziesz zajęcia z akrobatyki, tańca i jogi – różnorodność, która łączy siłę, wdzięk i harmonię ciała z umysłem. Dołącz do nas i poczuj, jak sport zmienia codzienność w inspirującą przygodę!",
     },
     {
       title: "Rozwój",
-      description: "Odkrywaj swoje możliwości, przekraczaj granice i ucz się nowych rzeczy. Razem z nami osiągniesz to, co niemożliwe!"
+      description:
+        "Rozwój to ciągłe odkrywanie nowych możliwości – zarówno ciała, jak i umysłu. Na naszych zajęciach pomagamy Ci wzmacniać ciało, rozwijać elastyczność i budować pewność siebie. To przestrzeń, gdzie każdy ruch przybliża Cię do osiągania wymarzonych celów, odnajdywania wewnętrznej harmonii i stawania się lepszą wersją siebie. Dołącz i rozwijaj się z nami!",
     },
     {
       title: "Zabawa",
-      description: "Zanurz się w świecie pełnym pasji i energii. Nauka w połączeniu z zabawą daje najlepsze efekty!"
-
+      description:
+        "Kreatywność to serce naszych zajęć! Niezależnie od tego, czy  wirujesz w tańcu, wykonujesz akrobatyczne ewolucje, czy odkrywasz harmonię na macie do jogi – wspieramy Cię w wyrażaniu siebie poprzez ruch. Uczymy, jak łączyć pasję, pomysłowość i technikę, tworząc coś naprawdę wyjątkowego. Wierzymy, że każdy ruch to historia, a każda chwila to okazja, by stworzyć coś nowego. Rozwijaj z nami wyobraźnię i swobodę wyrażania siebie! ✨",
     },
     {
       title: "Kreatywność",
-      description: "Pobudź swoją wyobraźnię, twórz i wyrażaj siebie w nowych, zaskakujących formach ruchu."
-
-    }
+      description:
+        "To magiczny świat, w którym dzieci odkrywają swoje talenty, rozwijają wyobraźnię i uczą się współpracy. To coś więcej niż tylko przyjemność – to fundament nauki, relacji i kreatywności. U nas zabawa jest pełna radości, inspiracji i niezapomnianych chwil, które rozwijają nie tylko umysł i serce ale również zdolności motoryczne każdego dziecka! 🎉✨",
+    },
   ];
 
   // Pobierz elementy tekstowe
-  const heroTitle = document.getElementById('hero-title');
-  const heroDescription = document.getElementById('hero-description');
-  const heroText = document.querySelector('.hero-text');
+  const heroTitle = document.getElementById("hero-title");
+  const heroDescription = document.getElementById("hero-description");
+  const heroText = document.querySelector(".hero-text");
 
   // Pobierz indykatory
-  const indicators = document.querySelectorAll('.carousel-indicators-custom button');
+  const indicators = document.querySelectorAll(
+    ".carousel-indicators-custom button"
+  );
 
   // Pobierz przyciski nawigacyjne
   const nextButton = document.querySelector(".carousel-control-next-custom");
   const prevButton = document.querySelector(".carousel-control-prev-custom");
 
   // Inicjalizacja Bootstrap Carousel
-  const heroCarousel = document.querySelector('#heroCarousel');
+  const heroCarousel = document.querySelector("#heroCarousel");
   const carousel = new bootstrap.Carousel(heroCarousel, {
     interval: 5000,
-    ride: 'carousel',
+    ride: "carousel",
     pause: false,
-    wrap: true
+    wrap: true,
   });
 
-
-  
   // Inicjalizacja tekstu dla pierwszego slajdu
   updateText(0);
 
@@ -91,15 +92,15 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateText(index) {
     // Usuń animacje, jeśli są aktywne
     heroText.classList.remove("fade-in", "fade-out");
-  
+
     // Rozpocznij fade-out i natychmiast zmień tekst
     heroText.classList.add("fade-out");
-  
+
     setTimeout(() => {
       // Zaktualizuj treść po krótkim czasie
       heroTitle.textContent = slideData[index].title;
       heroDescription.textContent = slideData[index].description;
-  
+
       // Rozpocznij fade-in
       heroText.classList.remove("fade-out");
       heroText.classList.add("fade-in");
@@ -107,14 +108,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Nasłuchiwanie na zmianę slajdu
-  heroCarousel.addEventListener('slide.bs.carousel', function (event) {
+  heroCarousel.addEventListener("slide.bs.carousel", function (event) {
     const nextSlide = event.to;
-  
+
     // Zaktualizuj indykatory
     indicators.forEach((indicator, idx) => {
       indicator.classList.toggle("active", idx === nextSlide);
     });
-  
+
     // Zaktualizuj tekst
     updateText(nextSlide);
   });
@@ -136,6 +137,10 @@ document.addEventListener("DOMContentLoaded", function () {
     carousel.prev();
   });
 
-  
 
+  setTimeout(() => {
+    mobileMenu.classList.remove("active");
+    toggleButton.classList.remove("fa-times");
+    toggleButton.classList.add("fa-bars");
+  }, 500);
 });

@@ -64,7 +64,7 @@ h1 {
 }
 
 .row-hero h1{
-  font-size: 5rem;
+  font-size: 5.5rem;
   font-family: "Baloo Bhai 2", sans-serif;
 }
 
@@ -229,7 +229,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .navbar .mobile-menu-toggle i {
@@ -294,7 +294,7 @@ h1 {
 }
 
 .hero-text p {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1.5rem;
   text-align: center;
   color: black;
@@ -476,7 +476,7 @@ svg {
 
 .offert-container h1 {
   font-family: "Baloo Bhai 2", sans-serif; /* lub inna czcionka */
-  font-size: 6.25rem; /* Duży rozmiar, by obrys był widoczny */
+  font-size: 6rem; /* Duży rozmiar, by obrys był widoczny */
   color: var(--dark-purple); /* Kolor wypełnienia */
   text-shadow: 0.125rem 0.125rem 0 #000000, -0.125rem 0.125rem 0 #000000,
     0.125rem -0.125rem 0 #000000, -0.125rem -0.125rem 0 #000000,
@@ -590,7 +590,7 @@ svg {
 }
 
 .wave-container-yellow-rotated {
-  height: 15vh;
+  height: 10vh;
   background-color: #fdf8b4;
   position: relative;
   transform: rotate(180deg);
@@ -616,7 +616,7 @@ svg {
 }
 
 .wave-container-yellow {
-  height: 15vh;
+  height: 10vh;
   background-color: #fdf8b4;
   position: relative;
 }
@@ -641,7 +641,7 @@ svg {
 }
 
 .wave-container-purple {
-  height: 13vh;
+  height: 8vh;
   background-color: var(--dark-purple);
   position: relative;
 }
@@ -851,8 +851,14 @@ header h1 {
 }
 
 @media (max-width: 1200px) {
-  .hero-text {
-    font-size: 1.5rem;
+  
+
+  .navbar-flex img{
+    width: 65px;
+    height: 65px;
+  }
+  .navbar-flex a{
+    font-size: 15px;
   }
 
   
@@ -862,7 +868,8 @@ header h1 {
   }
 
   .row-hero p{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
   }
 
   .instructors h3{
@@ -873,6 +880,10 @@ header h1 {
   .instructors p{
     font-size: 1.25rem;
     
+  }
+
+  .offer-header{
+    font-size: 20rem;
   }
 
 }
@@ -955,6 +966,9 @@ header h1 {
   
     cursor: pointer;
   }
+  .main-menu-list li a{
+    font-size: 13.9px;
+  }
 
   .main-menu-list li i{
     font-size: 14px;
@@ -1019,6 +1033,13 @@ header h1 {
     margin-left: 20px;
     font-size: 1.5rem;
   }
+  .offert-container h1{
+    font-size: 90px;
+    text-shadow: 0.1rem 0.1rem 0 #000000, -0.1rem 0.1rem 0 #000000,
+    0.1rem -0.1rem 0 #000000, -0.1rem -0.1rem 0 #000000,
+    0.1rem 0 0 #000000, -0.1rem 0 0 #000000, 0 0.1rem 0 #000000,
+    0 -0.1rem 0 #000000;
+  }
 
 }
 
@@ -1026,7 +1047,11 @@ header h1 {
 @media (max-width: 576px) {
 
   .offert-container h1{
-    font-size: 90px;
+    font-size: 65px;
+    text-shadow: 0.1rem 0.1rem 0 #000000, -0.1rem 0.1rem 0 #000000,
+    0.1rem -0.1rem 0 #000000, -0.1rem -0.1rem 0 #000000,
+    0.1rem 0 0 #000000, -0.1rem 0 0 #000000, 0 0.1rem 0 #000000,
+    0 -0.1rem 0 #000000;
   }
 
   html{
@@ -1035,26 +1060,43 @@ header h1 {
   .instructors h2 {
     font-size: 4rem;
     margin: 20px auto;
+    text-shadow: 0.1rem 0.1rem 0 #000000, -0.1rem 0.1rem 0 #000000,
+    0.1rem -0.1rem 0 #000000, -0.1rem -0.1rem 0 #000000,
+    0.1rem 0 0 #000000, -0.1rem 0 0 #000000, 0 0.1rem 0 #000000,
+    0 -0.1rem 0 #000000;
   }
   .instructors h3 {
     text-align: center;
     margin: 20px auto;
+    
   }
 
   .instructors p {
     text-align: center;
     font-size: 1.25rem;
+    
   }
 
   .hero-text h1 {
-    margin: 16px 0 16px 20px;
-    font-size: 4rem;
+    margin: 0px 0px 16px 35px;
+    font-size: 3rem;
     text-align: center;
   }
 
   .hero-text p {
-    margin-left: 22px;
-    font-size: 1.3rem;
+    margin-left: 35px;
+    font-size: 1.1rem;
+  }
+
+  .about-us p{
+    margin-right: 15px;
+  }
+
+  .navbar img {
+    width: 65px;
+    height: 65px;
+  
+    cursor: pointer;
   }
   
 }
